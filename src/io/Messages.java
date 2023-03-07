@@ -4,15 +4,15 @@ import java.lang.ProcessBuilder.Redirect;
 
 public class Messages {
 
-    public void printSuccess(String text) {
+    public static void printSuccess(String text) {
         System.out.println(GREEN + text + RESET);
     }
 
-    public void printError(String text) {
+    public static void printError(String text) {
         System.out.println(RED + text + RESET);
     }
 
-    public void printWarning(String text) {
+    public static void printWarning(String text) {
         System.out.println(YELLOW + text + RESET);
     }
 
