@@ -2,9 +2,9 @@ package src.models;
 
 public enum Consoles {
     
-    XBOX("xbox x"),
-    PLAY_STATION("play station 5"),
-    NINTENDO_SWITCH("switch");
+    XBOX("Xbox_X"),
+    PLAY_STATION("Playstation_5"),
+    NINTENDO_SWITCH("Switch");
 
     private final String name;
 

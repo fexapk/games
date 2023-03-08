@@ -42,6 +42,10 @@ public class GameShelf implements CsvWriter {
         );
     }
 
+    public int getNumberOfGames() {
+        return games.size();
+    }
+
     @Override
     public String toCsv(char separator) {
         StringBuilder sb = new StringBuilder();

@@ -5,13 +5,11 @@ import src.models.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Arrays;
 
 public class ShelfHandler {
-    private static final String DATA_DIRECTORY = "data/";
     private static final char CSV_SEPARATOR = ',';
 
     private GameShelf games;
@@ -20,7 +18,7 @@ public class ShelfHandler {
     public ShelfHandler(String filePath, GameShelf games) {
         if (filePath.isEmpty() || filePath == null) 
             throw new IllegalArgumentException("file path must be filled");
-        this.filePath = DATA_DIRECTORY + filePath.trim();
+        this.filePath = filePath.trim();
         this.games = games;
     }
 
