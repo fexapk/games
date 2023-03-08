@@ -3,7 +3,7 @@ package src.models;
 public enum Consoles {
     
     XBOX("Xbox_X"),
-    PLAY_STATION("Playstation_5"),
+    PLAY_STATION("PlayStation_5"),
     NINTENDO_SWITCH("Switch");
 
     private final String name;

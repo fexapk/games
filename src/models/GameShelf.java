@@ -63,7 +63,7 @@ public class GameShelf implements CsvWriter {
         StringBuilder sb = new StringBuilder();
         games.forEach(game -> {
             sb.append(game.toString());
-            sb.append("\n-\n");
+            sb.append("\n\n");
         });
         return sb.toString();
     }

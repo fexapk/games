@@ -11,6 +11,7 @@ public class Main {
         ShelfHandler handler = new ShelfHandler("data/games.csv", games);
         if (handler.load()) {
             Messages.printSuccess("Games loaded");
+            System.out.println(games);
         } else {
             Messages.printError("Something went wrong, try again later");
             System.exit(1);

@@ -51,8 +51,10 @@ public class ShelfHandler {
      */
     private Game parseCsv(String line) {
         String[] gameData = line.trim().split(String.valueOf(CSV_SEPARATOR));
-        String[] consoles = Arrays.copyOfRange(gameData, 3, gameData.length - 1);
-        return new Game(gameData[0], parseConsoles(consoles), Double.valueOf(gameData[1]));
+        String[] consolesStr = Arrays.copyOfRange(gameData, 2, gameData.length);
+        Consoles[] parsedConsoles = parseConsoles(consolesStr);
+
+        return new Game(gameData[0], parsedConsoles, Double.valueOf(gameData[1]));
     }
 
     /**
