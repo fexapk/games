@@ -11,7 +11,6 @@ public class Main {
         ShelfHandler handler = new ShelfHandler("data/games.csv", games);
         if (handler.load()) {
             Messages.printSuccess("Games loaded");
-            System.out.println(games);
         } else {
             Messages.printError("Something went wrong, try again later");
             System.exit(1);
@@ -71,5 +70,13 @@ public class Main {
         System.out.println(text + " > ");
         return scan.nextLine();
     }
+
+    public static final String MENU = 
+        "__________ARCHIVE_________\n" +
+        "show\t--show games\n" +
+        "add\t--add new game\n" +
+        "del\t--delete game\n" +
+        "save\t--save archive\n" +
+        "exit\t--exit archive\n";
 
 }

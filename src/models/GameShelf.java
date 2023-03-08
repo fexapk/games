@@ -2,6 +2,9 @@ package src.models;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import src.io.Messages;
+
 import java.lang.StringBuilder;
 import java.util.Arrays;
 
@@ -40,6 +43,21 @@ public class GameShelf implements CsvWriter {
                  .findFirst()
                  .orElse(null)
         );
+    }
+
+    public String getByFirstLetter(char letter) {
+        StringBuilder sb = new StringBuilder();
+        games.forEach(game -> {
+            char nameInital = 
+                game.getName()
+                    .toUpperCase()
+                    .charAt(0);
+            if (Character.toUpperCase(letter) == nameInital)
+                sb.append(game.getName() + '\n');
+        });
+        if (sb.length() == 0)
+            return Messages.RED + "No games start with " + letter + Messages.RESET;
+        return sb.toString();
     }
 
     public int getNumberOfGames() {
