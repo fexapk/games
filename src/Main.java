@@ -3,14 +3,10 @@ package src;
 import src.models.*;
 import src.io.*;
 import java.util.Scanner;
-import java.util.concurrent.SynchronousQueue;
-
-import javax.lang.model.util.ElementScanner14;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("______Welcome to Game Archives______");
         boolean isSaved = false, isChanged = false;
         Scanner scan = new Scanner(System.in);
 
@@ -26,7 +22,7 @@ public class Main {
         boolean wantExit = false;
         do {
             System.out.println(MENU);
-            String userOption = getLine(scan, MENU);
+            String userOption = getLine(scan, "");
 
             switch (userOption) {
                 case "show":
@@ -53,21 +49,46 @@ public class Main {
                     else {
                         games.add(userAdd);
                         isChanged = true;
+                        isSaved = updateSavedState(isSaved);
                         Messages.printSuccess("Game added successfully!");
                     }
                     break;
                 case "del":
                     userSearch = getLine(scan, "Game name");
                     if (games.removeByName(userSearch)) {
+                        isChanged = true;
+                        isSaved = updateSavedState(isSaved);
                         Messages.printSuccess("Game deleted");
                     } else {
                         suggestAutocomplete(userSearch, games);
                     }
                     break;
                 case "save":
+                    if (isChanged) {
+                        if (handler.save()) {
+                            isSaved = true;
+                            isChanged = false;
+                            Messages.printSuccess("Archive Saved");
+                        } else {
+                            Messages.printError("Something went wrong, changes not saved");
+                        }
+                    }
+                    break;
+                case "exit":
+                    if (isSaved) {
+                        wantExit = true;
+                    } else {
+                        Messages.printWarning("Are you sure to exit without saving?");
+                        char userExitConf = getLine(scan, "(y/n)").charAt(0);
+                        if (userExitConf == 'y') 
+                            wantExit = true; 
+                    }
+                    break;
+                default:
+                    Messages.printWarning(userOption + " not an option");
             }
         } while (!wantExit);
-
+        System.out.println("Thanks for usign The Game Archives");
     }
 
     public static Game getUserGame(Scanner scan) {
@@ -86,6 +107,12 @@ public class Main {
         } else {
             Messages.printWarning("There are no games with such name");
         }
+    }
+
+    public static boolean updateSavedState(boolean isSaved) {
+        if (isSaved == true)
+            return false;
+        return isSaved;
     }
 
     public static Consoles[] inputConsoles(Scanner scan) {
@@ -130,12 +157,12 @@ public class Main {
     }
 
     public static String getLine(Scanner scan, String text) {
-        System.out.println(text + " > ");
+        System.out.print(text + " > ");
         return scan.nextLine();
     }
 
     public static final String MENU = 
-        "__________ARCHIVE_________\n" +
+        "__________THE GAMES ARCHIVE_________\n\n" +
         "show   \t--show all\n" +
         "select \t--select by name\n" +
         "add    \t--add new game\n" +
