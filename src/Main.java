@@ -3,6 +3,7 @@ package src;
 import src.models.*;
 import src.io.*;
 import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,6 +32,7 @@ public class Main {
                         Messages.printWarning("There are no games in the archive");
                     else 
                         System.out.println(gameNamesList);
+                        pressEnterToContinue(scan);
                     break;
                 case "select":
                     String userSearch = getLine(scan, "Game name");
@@ -41,6 +43,7 @@ public class Main {
                     } else {
                         suggestAutocomplete(userSearch, games);
                     }
+                    pressEnterToContinue(scan);
                     break;
                 case "add":
                     Game userAdd = getUserGame(scan);
@@ -52,6 +55,7 @@ public class Main {
                         isSaved = updateSavedState(isSaved);
                         Messages.printSuccess("Game added successfully!");
                     }
+                    pressEnterToContinue(scan);
                     break;
                 case "del":
                     userSearch = getLine(scan, "Game name");
@@ -62,6 +66,7 @@ public class Main {
                     } else {
                         suggestAutocomplete(userSearch, games);
                     }
+                    pressEnterToContinue(scan);
                     break;
                 case "save":
                     if (isChanged) {
@@ -72,6 +77,7 @@ public class Main {
                         } else {
                             Messages.printError("Something went wrong, changes not saved");
                         }
+                        pressEnterToContinue(scan);
                     }
                     break;
                 case "exit":
@@ -113,6 +119,11 @@ public class Main {
         if (isSaved == true)
             return false;
         return isSaved;
+    }
+
+    public static void pressEnterToContinue(Scanner scan) {
+        System.out.print("Press Enter to Continue...");
+        scan.nextLine();
     }
 
     public static Consoles[] inputConsoles(Scanner scan) {

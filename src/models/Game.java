@@ -65,15 +65,15 @@ public class Game implements Comparable<Game>, CsvWriter {
     @Override
     public String toCsv(char separator) {
         return this.name + separator
-             + getDevicesCsv(separator) + separator
-             +  this.price;
+             + this.price + separator 
+             + getDevicesCsv(separator);
     }
 
     public String getDevicesCsv(char separator) {
         StringBuilder sb = new StringBuilder();
         Arrays.stream(supportedDevices)
               .forEach(device -> {
-                sb.append(device);
+                sb.append(device.getName());
                 sb.append(separator);
               });
         sb.deleteCharAt(sb.length()-1);

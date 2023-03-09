@@ -1,47 +1,48 @@
-Horizon Zero Dawn,PLAY_STATION,XBOX,59.99
-The Legend of Zelda: Breath of the Wild,NINTENDO_SWITCH,59.99
-Halo Infinite,XBOX,59.99
-Spider-Man: Miles Morales,PLAY_STATION,49.99
-Super Mario Odyssey,NINTENDO_SWITCH,59.99
-God of War,PLAY_STATION,19.99
-Animal Crossing: New Horizons,NINTENDO_SWITCH,49.99
-Death Stranding,PLAY_STATION,XBOX,39.99
-The Last of Us Part II,PLAY_STATION,39.99
-Mario Kart 8 Deluxe,NINTENDO_SWITCH,59.99
-Gears 5,XBOX,29.99
-Demon's Souls,PLAY_STATION,69.99
-Breathedge,XBOX,PLAY_STATION,24.99
-Mario + Rabbids Kingdom Battle,NINTENDO_SWITCH,59.99
-Returnal,PLAY_STATION,69.99
-Resident Evil Village,XBOX,PLAY_STATION,59.99
-Luigi's Mansion 3,NINTENDO_SWITCH,59.99
-Psychonauts 2,XBOX,PLAY_STATION,59.99
-Ghost of Tsushima,PLAY_STATION,39.99
-Overwatch,XBOX,PLAY_STATION,19.99
-Paper Mario: The Origami King,NINTENDO_SWITCH,59.99
-Doom Eternal,XBOX,PLAY_STATION,29.99
-Super Smash Bros. Ultimate,NINTENDO_SWITCH,59.99
-Assassin's Creed Valhalla,XBOX,PLAY_STATION,49.99
-Cuphead,XBOX,19.99
-The Elder Scrolls V: Skyrim,XBOX,PLAY_STATION,39.99
-Astral Chain,NINTENDO_SWITCH,59.99
-Gears Tactics,XBOX,59.99
-Ratchet & Clank: Rift Apart,PLAY_STATION,69.99
-The Outer Worlds,XBOX,PLAY_STATION,39.99
-Octopath Traveler,NINTENDO_SWITCH,59.99
-Forza Motorsport 7,XBOX,59.99
-Nier: Automata,XBOX,PLAY_STATION,39.99
-Pokemon Sword and Shield,NINTENDO_SWITCH,59.99
-Hitman 3,XBOX,PLAY_STATION,59.99
-Marvel's Avengers,XBOX,PLAY_STATION,59.99
-New Super Mario Bros. U Deluxe,NINTENDO_SWITCH,59.99
-Crash Bandicoot 4: It's About Time,XBOX,PLAY_STATION,39.99
-Astro's Playroom,PLAY_STATION,0.0
-Star Wars Jedi: Fallen Order,XBOX,PLAY_STATION,39.99
-Super Mario 3D World + Bowser's Fury,NINTENDO_SWITCH,59.99
-Overcooked! 2,XBOX,PLAY_STATION,24.99
-Monster Hunter Rise,NINTENDO_SWITCH,59.99
-Forza Horizon 4,XBOX,59.99
-No Man's Sky,XBOX,PLAY_STATION,29.99
-Ring Fit Adventure,NINTENDO_SWITCH,79.99
-Deathloop,PLAY_STATION,59.99
+Horizon Zero Dawn,59.99,PlayStation_5,Xbox_X
+The Legend of Zelda: Breath of the Wild,59.99,Switch
+Halo Infinite,59.99,Xbox_X,
+Spider-Man: Miles Morales,49.99,PlayStation_5,
+Super Mario Odyssey,59.99,Switch,
+Forza Horizon 5,59.99,Xbox_X,
+God of War,19.99,PlayStation_5,
+Animal Crossing: New Horizons,49.99,Switch,
+Death Stranding,39.99,PlayStation_5,Xbox_X
+The Last of Us Part II,39.99,PlayStation_5,
+Mario Kart 8 Deluxe,59.99,Switch,
+Gears 5,29.99,Xbox_X,
+Demon's Souls,69.99,PlayStation_5,
+Breathedge,24.99,Xbox_X,PlayStation_5
+Mario + Rabbids Kingdom Battle,59.99,Switch,
+Returnal,69.99,PlayStation_5,
+Resident Evil Village,59.99,Xbox_X,PlayStation_5
+Luigi's Mansion 3,59.99,Switch,
+Psychonauts 2,59.99,Xbox_X,PlayStation_5
+Ghost of Tsushima,39.99,PlayStation_5,
+Overwatch,19.99,Xbox_X,PlayStation_5
+Paper Mario: The Origami King,59.99,Switch,
+Doom Eternal,29.99,Xbox_X,PlayStation_5
+Super Smash Bros. Ultimate,59.99,Switch,
+Assassin's Creed Valhalla,49.99,Xbox_X,PlayStation_5
+Cuphead,19.99,Xbox_X,
+The Elder Scrolls V: Skyrim,39.99,Xbox_X,PlayStation_5
+Astral Chain,59.99,Switch,
+Gears Tactics,59.99,Xbox_X,
+Ratchet & Clank: Rift Apart,69.99,PlayStation_5,
+The Outer Worlds,39.99,Xbox_X,PlayStation_5
+Octopath Traveler,59.99,Switch,
+Forza Motorsport 7,59.99,Xbox_X,
+Nier: Automata,39.99,Xbox_X,PlayStation_5
+Pokemon Sword and Shield,59.99,Switch,
+Hitman 3,59.99,Xbox_X,PlayStation_5
+Marvel's Avengers,59.99,Xbox_X,PlayStation_5
+New Super Mario Bros. U Deluxe,59.99,Switch,
+Crash Bandicoot 4: It's About Time,39.99,Xbox_X,PlayStation_5
+Astro's Playroom,Free,PlayStation_5,
+Star Wars Jedi: Fallen Order,39.99,Xbox_X,PlayStation_5
+Super Mario 3D World + Bowser's Fury,59.99,Switch,
+Overcooked! 2,24.99,Xbox_X,PlayStation_5
+Monster Hunter Rise,59.99,Switch,
+Forza Horizon 4,59.99,Xbox_X,
+No Man's Sky,29.99,Xbox_X,PlayStation_5
+Ring Fit Adventure,79.99,Switch,
+Deathloop,59.99,PlayStation_5,
