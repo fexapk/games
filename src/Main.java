@@ -4,18 +4,40 @@ import src.models.*;
 import src.io.*;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("______Welcome to Game Archives______");
         boolean isSaved = false, isChanged = false;
+        Scanner scan = new Scanner(System.in);
+
         GameShelf games = new GameShelf();
         ShelfHandler handler = new ShelfHandler("data/games.csv", games);
+
         if (handler.load()) {
             Messages.printSuccess("Games loaded");
         } else {
             Messages.printError("Something went wrong, try again later");
             System.exit(1);
         }
+        boolean wantExit = false;
+        do {
+            System.out.println(MENU);
+            String userOption = getLine(scan, MENU);
+
+            switch (userOption) {
+                case "show":
+                    String gameNamesList = games.getJustNames();
+                    if (gameNamesList == null)
+                        Messages.printWarning("There are no games in the archive");
+                    else 
+                        System.out.println(gameNamesList);
+                    break;
+                case "select":
+            }
+        } while (!wantExit);
 
     }
 

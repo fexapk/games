@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import src.io.Messages;
-
 import java.lang.StringBuilder;
 import java.util.Arrays;
 
@@ -37,6 +35,11 @@ public class GameShelf implements CsvWriter {
         games.set(index, new Game(game));
     }
 
+    /**
+     * Searchs game by it's name
+     * @param name (String)
+     * @return (Game)
+     */
     public Game getByName(String name) {
         return new Game(
             games.stream()
@@ -46,6 +49,11 @@ public class GameShelf implements CsvWriter {
         );
     }
 
+    /**
+     * Returns all the games names whose name start with an specific letter
+     * @param letter (char)
+     * @return (String)
+     */
     public String getByFirstLetter(char letter) {
         StringBuilder sb = new StringBuilder();
         games.forEach(game -> {
@@ -80,7 +88,7 @@ public class GameShelf implements CsvWriter {
     @Override
     public String toString() {
         if (games.isEmpty())
-            return null;
+            return "empty";
         StringBuilder sb = new StringBuilder();
         games.forEach(game -> {
             sb.append(game.toString());
@@ -89,6 +97,10 @@ public class GameShelf implements CsvWriter {
         return sb.toString();
     }
 
+    /**
+     * Returns a list of all games names in a 3 column grid
+     * @return (String)
+     */
     public String getJustNames() {
         if (games.isEmpty()) 
             return null;
