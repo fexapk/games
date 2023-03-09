@@ -119,7 +119,7 @@ public class Main {
         Consoles[] gameConsoles = new Consoles[Consoles.values().length];
         for (int i = 0; i < gameConsoles.length; i++) {
             String instruction = Consoles.values()[i] 
-                + "available for the game (y/n)";
+                + " available for the game (y/n)";
             char userInput = getLine(scan, instruction).charAt(0);
             if (userInput == 'y' || userInput == 'Y') {
                 gameConsoles[i] = Consoles.values()[i];
@@ -138,7 +138,7 @@ public class Main {
                 continue;
             }
             number = scan.nextDouble();
-            scan.next();
+            scan.nextLine();
             break;
         }
         return number;
