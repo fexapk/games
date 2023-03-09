@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        boolean isSaved = false, isChanged = false;
+        boolean isSaved = true, isChanged = false;
         Scanner scan = new Scanner(System.in);
 
         GameShelf games = new GameShelf();

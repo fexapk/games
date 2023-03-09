@@ -134,10 +134,7 @@ public class GameShelf implements CsvWriter {
         IntStream.range(0, games.size())
                  .forEach(i -> {
                     String pos = "[" + (i+1) + "]";
-                    sb.append(pos + games.get(i) + " ");
-                    if (i % 3 == 0) {
-                        sb.append('\n');
-                    }
+                    sb.append(pos + games.get(i).getName() + '\n');
                  });
         return sb.toString();
     }
