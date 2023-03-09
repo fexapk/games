@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("______Welcome to Game Archives______");
+        boolean isSaved = false, isChanged = false;
         GameShelf games = new GameShelf();
         ShelfHandler handler = new ShelfHandler("data/games.csv", games);
         if (handler.load()) {
@@ -73,10 +74,11 @@ public class Main {
 
     public static final String MENU = 
         "__________ARCHIVE_________\n" +
-        "show\t--show games\n" +
-        "add\t--add new game\n" +
-        "del\t--delete game\n" +
-        "save\t--save archive\n" +
-        "exit\t--exit archive\n";
+        "show   \t--show all\n" +
+        "select \t--select by name\n" +
+        "add    \t--add new game\n" +
+        "del    \t--delete game\n" +
+        "save   \t--save archive\n" +
+        "exit   \t--exit archive\n";
 
 }

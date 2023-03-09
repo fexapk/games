@@ -2,6 +2,7 @@ package src.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import src.io.Messages;
 
@@ -56,7 +57,7 @@ public class GameShelf implements CsvWriter {
                 sb.append(game.getName() + '\n');
         });
         if (sb.length() == 0)
-            return Messages.RED + "No games start with " + letter + Messages.RESET;
+            return null;
         return sb.toString();
     }
 
@@ -66,6 +67,8 @@ public class GameShelf implements CsvWriter {
 
     @Override
     public String toCsv(char separator) {
+        if (games.isEmpty())
+            return "";
         StringBuilder sb = new StringBuilder();
         games.forEach(game -> {
             sb.append(game.toCsv(separator));
@@ -77,12 +80,27 @@ public class GameShelf implements CsvWriter {
     @Override
     public String toString() {
         if (games.isEmpty())
-            throw new IllegalStateException("cant print if there is no game");
+            return null;
         StringBuilder sb = new StringBuilder();
         games.forEach(game -> {
             sb.append(game.toString());
             sb.append("\n\n");
         });
+        return sb.toString();
+    }
+
+    public String getJustNames() {
+        if (games.isEmpty()) 
+            return null;
+        StringBuilder sb = new StringBuilder();
+        IntStream.range(0, games.size())
+                 .forEach(i -> {
+                    String pos = "[" + (i+1) + "]";
+                    sb.append(pos + games.get(i) + " ");
+                    if (i % 3 == 0) {
+                        sb.append('\n');
+                    }
+                 });
         return sb.toString();
     }
     
