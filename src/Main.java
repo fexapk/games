@@ -22,7 +22,7 @@ public class Main {
         boolean wantExit = false;
         do {
             System.out.println(MENU);
-            String userOption = getLine(scan, "");
+            String userOption = getLine(scan, "").split(" ")[0];
 
             switch (userOption) {
                 case "show":
