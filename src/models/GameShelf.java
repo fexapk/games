@@ -36,21 +36,30 @@ public class GameShelf implements CsvWriter {
     }
 
     /**
-     * Searchs game by it's name
+     * Searchs game by it's name, returns null if it does not exist in the list
      * @param name (String)
      * @return (Game)
      */
     public Game getByName(String name) {
-        return new Game(
-            games.stream()
-                 .filter(game -> game.getName().equals(name))
-                 .findFirst()
-                 .orElse(null)
-        );
+        int gameIndex = getGameIndex(name);
+        if (gameIndex == -1)
+            return null;
+        else
+            return new Game(games.get(gameIndex));
     }
 
+    public boolean removeByName(String name) {
+        int gameIndex = getGameIndex(name);
+        if (gameIndex == -1)
+            return false;
+        games.remove(gameIndex);
+        return true;   
+    }
+
+
     /**
-     * Returns all the games names whose name start with an specific letter
+     * Returns all the games names whose name start with an specific letter. 
+     * Null is returned if there is no match
      * @param letter (char)
      * @return (String)
      */
@@ -71,6 +80,23 @@ public class GameShelf implements CsvWriter {
 
     public int getNumberOfGames() {
         return games.size();
+    }
+
+    public boolean contains(Game game) {
+        return games.contains(game);
+    }
+
+    /**
+     * Get's game index if there is not such game -1 is returned
+     * @param name
+     * @return
+     */
+    public int getGameIndex(String name) {
+        for (int i = 0; i < games.size(); i++) {
+            if (games.get(i).getName().equalsIgnoreCase(name))
+                return i;
+        }
+        return -1;
     }
 
     @Override

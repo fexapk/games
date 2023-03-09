@@ -3,6 +3,7 @@ package src;
 import src.models.*;
 import src.io.*;
 import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
 
 import javax.lang.model.util.ElementScanner14;
 
@@ -36,6 +37,34 @@ public class Main {
                         System.out.println(gameNamesList);
                     break;
                 case "select":
+                    String userSearch = getLine(scan, "Game name");
+                    Game userGame =  games.getByName(userSearch);
+                    if (userGame != null) {
+                        Messages.printSuccess("Game found!");
+                        System.out.println(userGame);
+                    } else {
+                        suggestAutocomplete(userSearch, games);
+                    }
+                    break;
+                case "add":
+                    Game userAdd = getUserGame(scan);
+                    if (games.contains(userAdd)) 
+                        Messages.printWarning("Game already is in the archive");
+                    else {
+                        games.add(userAdd);
+                        isChanged = true;
+                        Messages.printSuccess("Game added successfully!");
+                    }
+                    break;
+                case "del":
+                    userSearch = getLine(scan, "Game name");
+                    if (games.removeByName(userSearch)) {
+                        Messages.printSuccess("Game deleted");
+                    } else {
+                        suggestAutocomplete(userSearch, games);
+                    }
+                    break;
+                case "save":
             }
         } while (!wantExit);
 
@@ -46,6 +75,17 @@ public class Main {
         double price = getUnsignedDouble(scan, "Price");
         Consoles[] gameConsoles = inputConsoles(scan);
         return new Game(name, gameConsoles, price);
+    }
+
+    public static void suggestAutocomplete(String userSearch, GameShelf games) {
+        String similarGames = 
+            games.getByFirstLetter(userSearch.charAt(0));
+        if (similarGames != null) {
+            Messages.printWarning("Did you meant to write");
+            System.out.println(similarGames);
+        } else {
+            Messages.printWarning("There are no games with such name");
+        }
     }
 
     public static Consoles[] inputConsoles(Scanner scan) {
